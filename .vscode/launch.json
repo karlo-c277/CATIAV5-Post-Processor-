@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: test drag n drop",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test drag n drop.py",
+            "args": ["${workspaceFolder}/vj7-apt.txt"],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+$$ -----------------------------------------------------------------
+$$     Generated on 6. travanj 2026. 20:44:06
+$$     CATIA APT VERSION 1.0
+$$ -----------------------------------------------------------------
+$$ Manufacturing Program.1
+$$  Part Operation.1
+PPRINT -prva strana
+$$*CATIA0
+$$ Manufacturing Program.1
+$$     1.00000     0.00000     0.00000     0.00000
+$$     0.00000    -1.00000     0.00000     0.00000
+$$     0.00000     0.00000    -1.00000     0.00000
+PARTNO Part Operation.1
+$$ OPERATION NAME : Turning Tool Change.1
+$$  Start generation of : Turning Tool Change.1
+$$ TOOLCHANGEBEGINNING
+CUTTER/    0.800000
+TOOLNO/1,TURN,1,0,3,    0.400000,$
+    0.000000,    0.000000,    0.100000,MMPR,  500.000000,SFM,$
+CCLW,ON,    0.000000,NOTE
+TPRINT/SDJCL 1210 D07,SDJCL 1210 D07,SDJCL 1210 D07
+LOADTL/1,1,1
+$$ TOOLCHANGEEND
+$$  End of generation of : Turning Tool Change.1
+$$ OPERATION NAME : Celo
+$$  Start generation of : Celo
+SWITCH/3
+FEDRAT/    0.1000,MMPR
+SPINDL/  500.0000,SFM,CCLW
+GOTO  /   17.00000,    0.00000,    2.00000
+GOTO  /   17.00000,    0.00000,    0.00000
+FEDRAT/    0.3000,MMPR
+GOTO  /   15.00000,    0.00000,    0.00000
+FEDRAT/    0.1000,MMPR
+GOTO  /   -0.40000,    0.00000,    0.00000
+FEDRAT/    0.8000,MMPR
+GOTO  /   -0.18787,    0.00000,    0.21213
+FEDRAT/    0.1000,MMPR
+GOTO  /   17.00000,    0.00000,    2.00000
+$$  End of generation of : Celo
+$$ OPERATION NAME : Uzduzno
+$$  Start generation of : Uzduzno
+FEDRAT/    0.1000,MMPR
+SPINDL/  500.0000,SFM,CCLW
+GOTO  /   14.00000,    0.00000,    3.00000
+FEDRAT/    0.3000,MMPR
+GOTO  /   14.00000,    0.00000,    1.00000
+FEDRAT/    0.1000,MMPR
+GOTO  /   14.00000,    0.00000,  -18.00000
+FEDRAT/    0.8000,MMPR
+GOTO  /   14.21213,    0.00000,  -17.78787
+FEDRAT/    0.1000,MMPR
+GOTO  /   17.00000,    0.00000,    2.00000
+$$  End of generation of : Uzduzno
+FINI
+
