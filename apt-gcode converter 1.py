@@ -1,6 +1,7 @@
 import os
 import sys
 from parseline import Myparseline
+from jezici import HR, EN
 
 izbor = input("Choose language (HR/EN): ").strip().upper()
 if izbor == "HR":
