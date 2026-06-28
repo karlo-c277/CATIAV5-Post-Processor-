@@ -1,3 +1,13 @@
 Here you can find the To do list.
 The list should be sort by priority.
 There are some .txt files those are for testing your code.
+
+(Its going to start at n⁰11 so there is no need to enter new numbers)
+
+
+
+
+
+Get the drag and drop working -not sure about the current state
+Resolve the CYCLE/ output for CATIAV5 -NOTE!!! use g291 to get into iso standard for canned cycles like g80 g81 g83 etc. 
+Start making new parseline for other g code standards and apt file outputs -as you wish
