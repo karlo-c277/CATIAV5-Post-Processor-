@@ -1,7 +1,27 @@
 import os
 import sys
+import io
+
 from parseline import Myparseline
 from jezici import HR, EN
+from output import OutputFilter
+
+
+class Tee:
+    def __init__(self, *files):
+        self.files = files
+
+    def write(self, data):
+        for f in self.files:
+            f.write(data)
+            f.flush()
+
+    def flush(self):
+        for f in self.files:
+            f.flush()
+
+
+# ---------------- JEZIK ----------------
 
 while True:
     izbor = input("Choose language (HR/EN): ").strip().upper()
@@ -18,7 +38,11 @@ while True:
     else:
         print("- Invalid choice. Please enter HR or EN.")
 
+
 print(LANG["def programa"])
+
+
+# ---------------- CATIA KOMENTARI ----------------
 
 while True:
     catia_comments = input(LANG["catia komentari"]).strip().upper()
@@ -33,52 +57,103 @@ while True:
         ccmt = 0
         break
     else:
-        print(LANG["kriv odabir za komt"])
+        print(LANG["kriv odabir da/ne"])
+
+
+# ---------------- INPUT DATOTEKA ----------------
 
 while True:
     input_file = input(LANG["unesite datoteku"]).strip()
+
     if not input_file.endswith(".txt"):
         input_file += ".txt"
+
     if not os.path.exists(input_file):
-        print(
-            LANG["Nepostojeća datoteka."] + "\n"
-        )
+        print(LANG["Nepostojeća datoteka."] + "\n")
         continue
 
-    # 3. Provjera je li vrsta datoteke ispravna (mora biti .txt)
     if not os.path.isfile(input_file) or not input_file.lower().endswith(".txt"):
-        print(
-            LANG["Neispravna vrsta"] + "\n"
-        )
+        print(LANG["Neispravna vrsta"] + "\n")
         continue
 
     break
+
+
 print(LANG["Datoteka učitana:"], input_file)
 print(LANG["Učitavanje linija"])
 print("G55\nDIAMOF\n#DEFINIRATI SIROVAC")
 
+
 parse = Myparseline(LANG, ccmt)
 
-encp = ["utf-8",    "utf-8-sig",    "cp1250",   "iso-8859-2", "latin-1"]
 
-for enc in encp:
-    try:
-        with open(input_file, "r", encoding=enc) as f:
-            myline = ""
-            for line in f:
-                myline += line.strip()
-                if myline.endswith("$"):
-                    myline = myline[:-1]
-                    continue
-                else:
-                    parse.parseline(myline)
-                    myline = ""
-        break
-    except UnicodeDecodeError:
-        continue
-    except Exception as e:
-        print(LANG["error"] + str(e))
-        exit(1004)
+# ---------------- HVATANJE OUTPUTA ----------------
+
+terminal_output = io.StringIO()
+
+original_stdout = sys.stdout
+
+sys.stdout = Tee(sys.stdout, terminal_output)
+
+
+try:
+
+    encp = [
+        "utf-8",
+        "utf-8-sig",
+        "cp1250",
+        "iso-8859-2",
+        "latin-1"
+    ]
+
+    for enc in encp:
+
+        try:
+
+            with open(input_file, "r", encoding=enc) as f:
+
+                myline = ""
+
+                for line in f:
+
+                    myline += line.strip()
+
+                    if myline.endswith("$"):
+                        myline = myline[:-1]
+                        continue
+
+                    else:
+                        parse.parseline(myline)
+                        myline = ""
+
+
+            break
+
+
+        except UnicodeDecodeError:
+            continue
+
+
+        except Exception as e:
+            print(LANG["error"] + str(e))
+            break
+
+
+finally:
+    sys.stdout = original_stdout
+
+
+# ---------------- SPREMANJE OUTPUTA ----------------
 
 print("\n" + LANG["Gotovo."])
+
+
+output_lines = terminal_output.getvalue().splitlines(True)
+
+
+filter_output = OutputFilter(LANG)
+
+filter_output.save_filtered_output(output_lines)
+
+
 exit(0)

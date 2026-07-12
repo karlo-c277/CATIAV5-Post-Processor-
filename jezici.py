@@ -10,7 +10,7 @@ HR = {
     "Gotovo."                   : "M30\n- Gotovo. ",
     "Nepoznata naredba"         : "Greška - provjeriti naredbu (nije u niti jednoj kategoriji naredbe): ",
     "catia komentari"           : "- Želite li zadržati komentare iz CATIA APT datoteke? (DA/NE): ",
-    "kriv odabir za komt"       : "- Neispravan odabir za komentare. Unesite ponovo. (DA/NE).",
+    "kriv odabir da/ne"       : "- Neispravan odabir. Unesite ponovo. (DA/NE).",
     "cta crc cent nije isti"    : "Greška - centri luka se ne poklapaju: ",
     "sredina na tang"           : "Greška - Sredina luka na tangeni: ",
     "nepoznata ravnina"         : "Greška - ravnina nepravilno zapamćena nije (G17, G18 ili G19): ",
@@ -38,11 +38,16 @@ HR = {
     "unijeti ravninu - kruznica": "- Greška - Nije definirana ravnina obrade kružnog luka. Unesite (G17, G18 ili G19): ",
     "units"                     : "- Unesite vrstu mjernih jedinica (MM/INCH):",
     "neispravni podaci"         : "Greška - neispravni podaci za naredbu:",
-    "kraj"                      : ";Kraj programa",
+    "kraj"                      : "Datoteka je prevedena i spremljena u: ",
     "partno"                    : ";Dio: ",
     "unesite datoteku"          : "- Unesite naziv datoteke (.txt datoteka s ): ",
     "tlaxis"                    : "; Osi alata su: ",
-    "neobradeni cycle"          : "Greška - neobrađena cCycle komanda: "
+    "neobradeni cycle"          : "Greška - neobrađena cCycle komanda: ",
+    "pokretanje"                : "Pokretanje Post procesora...\n",
+    "naziv output fl"           : "Unesite naziv izlazne datoteke: ",
+    "ekstenzija output"         : "Unesite ekstenziju izlazne datoteke (stisnite ENTER za .txt): ",
+    "save file y/n"             : "Želite li stvoriti izlaznu datoteku? (DA/NE): ",
+    "neispravni naziv"          : "Greška - neispravan naziv datoteke."
 
 }
 
@@ -57,7 +62,7 @@ EN = {
     "Gotovo."                   : "- Done.",
     "Nepoznata naredba"         : "Error - check the command (not in any of the command categories): ",
     "catia komentari"           : "- Do you want to keep comments from the CATIA APT file? (YES/NO): ",
-    "kriv odabir za komt"       : "- Invalid choice for comments. Please enter again (YES/NO).",
+    "kriv odabir da/ne"       : "- Invalid choice. Please enter again (YES/NO).",
     "cta crc cent nije isti"    : "Error - centers do not match: ",
     "sredina na tang"           : "Error - center of arc on tangent: ",
     "nepoznata ravnina"         : "Error - plane not properly remembered (G17, G18 or G19): ",
@@ -85,10 +90,15 @@ EN = {
     "unijeti ravninu - kruznica": "- Error - plane for circular motion not defined. Enter (G17, G18 or G19): ",
     "units"                     : "- Enter measurement unit (INCH/MM)",
     "neispravni podaci"         : "Error - invalid data for this command:",
-    "kraj"                      : ";End of program",
+    "kraj"                      : "File has been translated and saved in: ",
     "partno"                    : ";Part: ",
     "unesite datoteku"          : "- Enter the file name (with .txt extension): ",
     "tlaxis"                    : "; Tool axes are: ",
-    "neobradeni cycle"          : "Error - unprocessed Cycle command: "
+    "neobradeni cycle"          : "Error - unprocessed Cycle command: ",
+    "pokretanje"                : "Starting Post Processor...\n",
+    "naziv output fl"           : "Enter the name of the output file: ",
+    "ekstenzija output"         : "Enter the extension of the output file (press ENTER for .txt): ",
+    "save file y/n"             : "Do you want to create an output file? (YES/NO): ",
+    "neispravni naziv"          : "Error - invalid file name."
     
 }
