@@ -6,7 +6,6 @@ from parseline import Myparseline
 from jezici import HR, EN
 from output import OutputFilter
 
-
 class Tee:
     def __init__(self, *files):
         self.files = files
@@ -19,9 +18,6 @@ class Tee:
     def flush(self):
         for f in self.files:
             f.flush()
-
-
-# ---------------- JEZIK ----------------
 
 while True:
     izbor = input("Choose language (HR/EN): ").strip().upper()
@@ -38,15 +34,11 @@ while True:
     else:
         print("- Invalid choice. Please enter HR or EN.")
 
-
 print(LANG["def programa"])
-
-
-# ---------------- CATIA KOMENTARI ----------------
 
 while True:
     catia_comments = input(LANG["catia komentari"]).strip().upper()
-
+    
     opcije_da = ("DA", "YES", "1")
     opcije_ne = ("NE", "NO", "0")
 
@@ -58,10 +50,7 @@ while True:
         break
     else:
         print(LANG["kriv odabir da/ne"])
-
-
-# ---------------- INPUT DATOTEKA ----------------
-
+        
 while True:
     input_file = input(LANG["unesite datoteku"]).strip()
 
@@ -75,85 +64,42 @@ while True:
     if not os.path.isfile(input_file) or not input_file.lower().endswith(".txt"):
         print(LANG["Neispravna vrsta"] + "\n")
         continue
-
     break
-
 
 print(LANG["Datoteka učitana:"], input_file)
 print(LANG["Učitavanje linija"])
 print("G55\nDIAMOF\n#DEFINIRATI SIROVAC")
 
-
 parse = Myparseline(LANG, ccmt)
-
-
-# ---------------- HVATANJE OUTPUTA ----------------
-
 terminal_output = io.StringIO()
-
 original_stdout = sys.stdout
-
 sys.stdout = Tee(sys.stdout, terminal_output)
 
-
 try:
-
-    encp = [
-        "utf-8",
-        "utf-8-sig",
-        "cp1250",
-        "iso-8859-2",
-        "latin-1"
-    ]
-
+    encp = ["utf-8",    "utf-8-sig",    "cp1250",   "iso-8859-2",   "latin-1"]
     for enc in encp:
-
         try:
-
             with open(input_file, "r", encoding=enc) as f:
-
                 myline = ""
-
                 for line in f:
-
                     myline += line.strip()
-
                     if myline.endswith("$"):
                         myline = myline[:-1]
                         continue
-
                     else:
                         parse.parseline(myline)
                         myline = ""
-
-
             break
-
-
         except UnicodeDecodeError:
             continue
-
-
         except Exception as e:
             print(LANG["error"] + str(e))
             break
-
-
+    print("\n" + LANG["Gotovo."])
 finally:
     sys.stdout = original_stdout
 
-
-# ---------------- SPREMANJE OUTPUTA ----------------
-
-print("\n" + LANG["Gotovo."])
-
-
 output_lines = terminal_output.getvalue().splitlines(True)
-
-
 filter_output = OutputFilter(LANG)
-
 filter_output.save_filtered_output(output_lines)
-
-
 exit(0)

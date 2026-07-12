@@ -33,8 +33,8 @@ class Myparseline:
         self.ls_clnt = ""                       #Zadnja definirana vrijednost podmazivanja (FLOOD / MIST / OFF)
         self.ls_cycle = ""                      #Zadnji definirani ciklus
         self.lsunits = ""                       #Mjerni sustav
-        self.komentari = ("LOADTL/", "SELECTL/", "CUTTER/", "INTOL/", "OUTOL/", "TOLER/", "FINI", "END", "PARTNO", "$$", "OPERATION NAME", "TLAXIS", "CUTCOM")      #skraćivanje koda, na ovaj način se ne treba zapisivati line.startswith("comand_name") za svaku komandu posebno
-        self.non_def = ("SWITCH/", "PPFUN", "TOOLNO/", "GO/", "AUTOPS/", "REWIND/" "INDIRP/")
+        self.komentari = ("LOADTL/", "TOOLNO/", "REWIND/", "SELECTL/", "CUTTER/", "INTOL/", "OUTOL/", "TOLER/", "FINI", "END", "PARTNO", "$$", "OPERATION NAME", "TLAXIS", "CUTCOM")      #skraćivanje koda, na ovaj način se ne treba zapisivati line.startswith("comand_name") za svaku komandu posebno
+        self.non_def = ("SWITCH/", "PPFUN", "GO/", "AUTOPS/", "INDIRP/")
         
         
     def parseline(self, line):
@@ -112,7 +112,7 @@ class Myparseline:
                 
                 elif line.startswith("TLAXIS"):
                     elements = line.split(" ")
-                    print(self.LANG["tlaxis"] + "X" + elements[1].strip() + " Y" + elements[2].strip() + " Z" + elements[3].strip())
+                    print(self.LANG["tlaxis"] + " I" + elements[1].strip() + " J" + elements[2].strip() + " K" + elements[3].strip())
                     
                 else:
                     print("; " + line)
@@ -606,8 +606,8 @@ class Myparseline:
                     if clon=="ON" or clon=="1":
                         while True:
                             if self.ls_clnt_typ=="":
-                                print(self.LANG["coolant on off"] + line)
-                                clon = input(self.LANG["coolant"]).strip().upper()
+                                print(self.LANG["coolant on off flood mist"] + line)
+                                clon = input(self.LANG["ls-clnt"]).strip().upper()
                                 break
                             elif self.ls_clnt_typ=="M8" or self.ls_clnt_typ=="M7" or self.ls_clnt_typ=="M9":
                                 print(self.ls_clnt_typ)
@@ -628,8 +628,8 @@ class Myparseline:
                         self.ls_clnt="M7"
                         break
                     else:
-                        print(self.LANG["coolant on off"] + line)
-                        clon = input(self.LANG["coolant"]).strip().upper()
+                        print(self.LANG["coolant on off flood mist"] + line)
+                        clon = input("").strip().upper()
                         continue
             
             elif line.startswith("DELAY"):

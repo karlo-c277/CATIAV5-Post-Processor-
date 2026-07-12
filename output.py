@@ -41,12 +41,14 @@ class OutputFilter:
 
                     for line in output_lines:
                         if not line.strip().startswith("- "):
-                            file.write(line.strip())
+                            line = " ".join(line.split())
+                            file.write(line.strip() + "\n")
 
-                print(self.LANG["kraj"] + filename)
+
+                print(self.LANG["spremljeno u"] + filename)
 
             elif save_file in ["NE", "NO", "0"]:
-                print(self.LANG["kraj"])
+                print(self.LANG["ne zeli spremiti"])
             
             else:
                 print(self.LANG["kriv odabir da/ne"])

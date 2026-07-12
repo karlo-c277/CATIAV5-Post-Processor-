@@ -1,0 +1,84 @@
+; -----------------------------------------------------------------
+;     Generated on 3. svibanj 2026. 3:34:50
+;     CATIA APT VERSION 1.0
+; -----------------------------------------------------------------
+; Manufacturing Program.1
+;  Part Operation.1
+;*CATIA0
+; Manufacturing Program.1
+;     1.00000     0.00000     0.00000     0.00000
+;     0.00000     1.00000     0.00000     0.00000
+;     0.00000     0.00000     1.00000    94.21417
+;Dio:
+; CUTCOM/OFF
+; OPERATION NAME : Tool Change.1
+;  Start generation of : Tool Change.1
+; Osi alata su: X0.000000, Y0.000000, Z1.000000
+; TOOLCHANGEBEGINNING
+G0
+G90 G18   Z100.0
+The helly is ts CUTTER/ 16.000000,  0.000000,  8.000000,  4.618802, 30.000000,0.000000, 50.000000
+(nije def);TOOLNO/1,   16.000000
+T="T1 Drill D 10"
+;Pozicija na magazinu broj 1
+; TOOLCHANGEEND
+;  End of generation of : Tool Change.1
+; OPERATION NAME : Drilling Deep Hole.1
+;  Start generation of : Drilling Deep Hole.1
+;Pozicija na magazinu broj 1,1
+G97  S70.0
+M3    Z1.0
+G94 G1 F1000.0
+Z-20.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-19.0
+F1000.0
+Z-35.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-34.0
+F1000.0
+Z-45.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-44.0
+F1000.0
+Z-55.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-54.0
+F1000.0
+Z-65.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-64.0
+F1000.0
+Z-75.0
+G4 S50.0
+F1000.0
+Z1.0
+F10.0
+Z-74.0
+F1000.0
+Z-81.541
+G4 S50.0
+F1000.0
+Z1.0
+;  End of generation of : Drilling Deep Hole.1
+M5
+Greška - provjeriti naredbu (nije u niti jednoj kategoriji naredbe):  REWIND/0
+Kraj programa.
+Greška - provjeriti naredbu (nije u niti jednoj kategoriji naredbe):  Y43ewsdrjckhvl
+
+M30
