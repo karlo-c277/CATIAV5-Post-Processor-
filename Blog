@@ -4,3 +4,8 @@ Here is defined all the progress done so far.
            -cannot parse CYCLE/ outputs
            -has a drag and drop, does it work? (No)
            -languages aviable for Croatian and English
+
+12.6.2026. -cycle outputs -> catia defines the cycle (?that cycle can have different nuber of data numbers?) then it says where that cycle begins, like where is the first point for drilling, then second point then third
+           -when moving to g code for win nc there must be outputted a by pass to the iso gcode commands, bc the new winnc uses its special data that is directly linked to programs chache witch cannot be configed via g code commands
+           -enabled for the user to enter filename, and enabled "utf-8",    "utf-8-sig",    "cp1250",   "iso-8859-2",   "latin-1" decryptions hopefuly there won't be some issues here
+           -enabled to make file output in utf-8 decrypt with an option for a costum extension (then the user can simply just open the file? maybe winnc uses utf-8 decrypt)
