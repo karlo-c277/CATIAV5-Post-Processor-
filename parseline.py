@@ -33,14 +33,11 @@ class Myparseline:
         self.ls_clnt = ""                       #Zadnja definirana vrijednost podmazivanja (FLOOD / MIST / OFF)
         self.ls_cycle = ""                      #Zadnji definirani ciklus
         self.lsunits = ""                       #Mjerni sustav
-        self.komentari = ("LOADTL/", "TOOLNO/", "REWIND/", "SELECTL/", "CUTTER/", "INTOL/", "OUTOL/", "TOLER/", "FINI", "END", "PARTNO", "$$", "OPERATION NAME", "TLAXIS", "CUTCOM")      #skraćivanje koda, na ovaj način se ne treba zapisivati line.startswith("comand_name") za svaku komandu posebno
+        self.komentari = ("PPRINT","LOADTL/", "TOOLNO/", "REWIND/", "SELECTL/", "CUTTER/", "INTOL/", "OUTOL/", "TOLER/", "FINI", "END", "PARTNO", "$$", "OPERATION NAME", "TLAXIS", "CUTCOM")      #skraćivanje koda, na ovaj način se ne treba zapisivati line.startswith("comand_name") za svaku komandu posebno
         self.non_def = ("SWITCH/", "PPFUN", "GO/", "AUTOPS/", "INDIRP/")
         
         
     def parseline(self, line):
-            
-            if line.startswith("PPRINT"):       #prilikom korištenja ICAM post procesora TPRINT se mijenja u PPRINT, ovo skraćuje daljni kod samog parsera
-                line= line.replace("PPRINT", "TPRINT")
             
             if not line.strip():
                 pass

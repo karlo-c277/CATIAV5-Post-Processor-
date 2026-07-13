@@ -66,14 +66,14 @@ while True:
         continue
     break
 
-print(LANG["Datoteka učitana:"], input_file)
-print(LANG["Učitavanje linija"])
-print("G55\nDIAMOF\n#DEFINIRATI SIROVAC")
-
 parse = Myparseline(LANG, ccmt)
 terminal_output = io.StringIO()
 original_stdout = sys.stdout
 sys.stdout = Tee(sys.stdout, terminal_output)
+
+print(LANG["Datoteka učitana:"], input_file)
+print(LANG["Učitavanje linija"])
+print("G55\nDIAMOF\n#DEFINIRATI SIROVAC")
 
 try:
     encp = ["utf-8",    "utf-8-sig",    "cp1250",   "iso-8859-2",   "latin-1"]
