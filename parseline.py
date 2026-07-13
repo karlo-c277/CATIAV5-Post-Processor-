@@ -1,10 +1,9 @@
 import re                                       #Omugućuje re.split() funkciju za razdvajanje stringa po više znakova
 import math
+from apt_gcode_startup import preset
 # Tapping obavezno preko Output "CYCLE"
 # Naziv, parametri, kompenzacije i svi podaci alata u CATIA-i se MORAJU poklapati sa onima u WinNC-u
 class Myparseline:
-  
-        
 
     def __init__(self, LANG, ccmt):
         self.LANG = LANG                        #Poziv ispisa na odabranom jeziku
@@ -12,6 +11,8 @@ class Myparseline:
         self.ccmt = ccmt                        #Varijabla koja određuje hoće li se komentari iz APT datoteke ispisati u izlaznoj datoteci
         
         self.ss = 3                          #Varijabla koju određuje korisnik ovisno o tome treba li se prilikom pokretanja vretena M03/M04 ispisivati okretaji ili ne
+        
+        self.preset = preset                      #Varijabla koja određuje hoće li se izlazna datoteka spremiti u MPF formatu ili ne
         
         self.lsmovement=""                      #Način kretanja alata
         self.lsplane=""                         #Ravnina xy, xz ili yz
@@ -380,20 +381,22 @@ class Myparseline:
                     
                 elif "ON" in line:
                     while True:
-                        spindle_start = input(self.LANG["spindle start"]).strip().upper()
+                        if self.preset == "0":
+                            spindle_start = input(self.LANG["spindle start"]).strip().upper()
     
-                        opcije_da = ("DA", "YES", "1")
-                        opcije_ne = ("NE", "NO", "0")
-    
-                        if spindle_start in opcije_da:
-                            self.ss = 1
-                            break
-                        elif spindle_start in opcije_ne:
+                            opcije_da = ("DA", "YES", "1")
+                            opcije_ne = ("NE", "NO", "0")
+                            if spindle_start in opcije_da:
+                                self.ss = 1
+                                break
+                            elif spindle_start in opcije_ne:
+                                self.ss = 0
+                                break
+                            else:
+                                print(self.LANG["krivi spindle start"])
+                        elif self.preset == "1":
                             self.ss = 0
                             break
-                        else:
-                            print(self.LANG["krivi spindle start"])
-
                     
                     print(self.ls_on_rotation, end=" ")
                     if self.ss==1:
@@ -407,7 +410,6 @@ class Myparseline:
 
                 if rotation in ("CLW", "CCLW"):
                     self.ls_on_rotation = smjervrtnje
- 
  
                 if self.lsrotation != smjervrtnje:
                     print(smjervrtnje, end=" ")

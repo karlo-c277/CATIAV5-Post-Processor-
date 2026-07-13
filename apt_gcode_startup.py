@@ -2,7 +2,7 @@ import os
 import sys
 import io
 
-from parseline import Myparseline
+
 from jezici import HR, EN
 from output import OutputFilter
 
