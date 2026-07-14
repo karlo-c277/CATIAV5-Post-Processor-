@@ -1,9 +1,12 @@
-# Python
-This is the only open source Post processor made for CATIAV5 APT 1.0 code that makes G-code for WinNC(newer verion)
+# APT-Gcode
+This is an open source post processor for ATP files outputed by CAM programs.
+It features - translating ATP commands into G-code, also it has select presets for output files, so you dont need to worry if your controler will open the file. But also it allows to make a costum file header, name and extension.
 
+Pull requests are welcome;)
 
-Due to low funding some features like being able to post process APT files from various CAM softwares as well as to output into various G-code standards do not exist. Because it takes a LOT of research and resources that I do not have aviable.
+# Usage
+The program will ask you to select some options, and the rest is automated
+    - Select the program on your machine for easier startup (Costum/0   WinNC Sinumerik/1):
+        -> here you can choose to load a finished preset or configure the needed information by hand
 
-If there is ANYONE and I mean literally anyone I kindly ask you that if you have anything useful to contribute to contact: karlo.ugrin@gmail.com
-
-There is a To-do list if someone is willing to contribute (!!ask via email!!)
+    
