@@ -69,7 +69,7 @@ while True:
             continue
     else:
         print(LANG["samo je iso"])
-        break
+        continue
     
 print(LANG["def programa"])
 
