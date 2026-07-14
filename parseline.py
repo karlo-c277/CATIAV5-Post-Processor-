@@ -82,7 +82,6 @@ class Myparseline:
                     elif len(line.split(" ")) >= 3:
                         cutter = line.split(" ")
                         r_ostrice = cutter[1].strip()
-                        print("The helly is ts " + line)
                     
                 elif line.startswith("INTOL/"):
                     intol = line.split("/")[1].strip()

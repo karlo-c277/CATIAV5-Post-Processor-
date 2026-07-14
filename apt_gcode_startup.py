@@ -89,9 +89,10 @@ while True:
         print(LANG["kriv odabir da/ne"])
         
 while True:
-    input_file = input(LANG["unesite datoteku"]).strip()
+    input_file = input(LANG["unesite datoteku"]).strip("'\" ")
+    clean_name = os.path.basename(input_file)
 
-    if "." not in input_file:
+    if "." not in clean_name:
         input_file += ".txt"
 
     if not os.path.exists(input_file):

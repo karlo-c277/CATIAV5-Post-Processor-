@@ -1,0 +1,61 @@
+G55
+DIAMOF
+;UNITS!!!- mm
+G21
+# DEFINE WORKPIECE
+; -----------------------------------------------------------------
+; Generated on 6. travanj 2026. 20:44:06
+; CATIA APT VERSION 1.0
+; -----------------------------------------------------------------
+; Manufacturing Program.1
+; Part Operation.1
+; PPRINT -prva strana
+;*CATIA0
+; Manufacturing Program.1
+; 1.00000 0.00000 0.00000 0.00000
+; 0.00000 -1.00000 0.00000 0.00000
+; 0.00000 0.00000 -1.00000 0.00000
+;Part:
+; OPERATION NAME : Turning Tool Change.1
+; Start generation of : Turning Tool Change.1
+; TOOLCHANGEBEGINNING
+The helly is ts CUTTER/ 0.800000
+; TOOLNO/1,TURN,1,0,3, 0.400000,0.000000, 0.000000, 0.100000,MMPR, 500.000000,SFM,CCLW,ON, 0.000000,NOTE
+; TPRINT/SDJCL 1210 D07,SDJCL 1210 D07,SDJCL 1210 D07
+Magazine slot number 1,1,1
+; TOOLCHANGEEND
+; End of generation of : Turning Tool Change.1
+; OPERATION NAME : Celo
+; Start generation of : Celo
+(nije def);SWITCH/3
+G95 G1 F0.1
+G96 S500.0
+M4
+G90 X17.0 Z2.0
+Z0.0
+F0.3
+X15.0
+F0.1
+X-0.4
+F0.8
+X-0.18787 Z0.21213
+F0.1
+X17.0 Z2.0
+; End of generation of : Celo
+; OPERATION NAME : Uzduzno
+; Start generation of : Uzduzno
+F0.1
+G96 S500.0
+
+X14.0 Z3.0
+F0.3
+Z1.0
+F0.1
+Z-18.0
+F0.8
+X14.21213 Z-17.78787
+F0.1
+X17.0 Z2.0
+; End of generation of : Uzduzno
+End of program.
+
