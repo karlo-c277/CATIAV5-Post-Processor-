@@ -257,6 +257,21 @@ class Myparseline:
                     koord_y="Y"+str(y)
                 if z!=0:
                     koord_z="Z"+str(z)
+                    
+                if self.rapto==1:
+                    
+                    dist=math.hypot(dtx, dty, dtz)
+                    ratio=self.rapto_num/dist
+                    rdtx=ratio*x
+                    rdty=ratio*y
+                    rdtz=ratio*z
+                    koord__x=koord_x-rdtx
+                    koord__y=koord_y-rdty
+                    koord__z=koord_z-rdtz
+                    
+                    print("G0 X" + koord__x + "Y" + koord__y + "Z" + koord__z + "\nG1")
+                    
+                    self.rapto=0
                 
                 print(koord_x, koord_y, koord_z)
         
@@ -284,6 +299,21 @@ class Myparseline:
                     
                 if self.rapto==1:
                     
+                    dtx=self.ls_x-x
+                    dty=self.ls_y-y
+                    dtz=self.ls_z-z
+                    dist=math.hypot(dtx, dty, dtz)
+                    ratio=self.rapto_num/dist
+                    rdtx=ratio*dtx
+                    rdty=ratio*dty
+                    rdtz=ratio*dtz
+                    koord__x=koord_x-rdtx
+                    koord__y=koord_y-rdty
+                    koord__z=koord_z-rdtz
+                    
+                    print("G0 X" + koord__x + "Y" + koord__y + "Z" + koord__z + "\nG1")
+                    
+                    self.rapto=0                    
                  
                 print(koord_x, koord_y, koord_z)
                 
@@ -380,10 +410,8 @@ class Myparseline:
                         self.lsmovement = movement
                         
                 if "RAPTO" in line:
-                    self.ls_ls_x = self.ls_x
-                    self.ls_ls_y = self.ls_y
-                    self.ls_ls_z = self.ls_z
                     self.rapto=1
+                    self.rapto_num=float(feed[4].strip())
                 
                 print("F"+ str(round(float(numf), 3)))
                 
