@@ -1,19 +1,7 @@
 [build-system]
 requires = ["hatchling"]
-build-backend = "setuptools.build"
+build-backend = "hatchling.build"
 
-[projects]
-name= "apt-gcode"
+[project]
+name = "apt-gcode"
 version = "0.1.0"
-descrition = "Post processor for APT code into ISO 6983"
-readme = "README.md"
-requires-python = ">=3.8"
-license = { file = "EUPL  -  v1.2" }
-authors = [{ name = "karlo-c277" }]
-keywords = ["apt", "gcode", "catia", "parser", "iso6983", "atp", "cnc", "post processor", "nc"]
-
-[project.scripts]
-pyproject = "apt_gcode_startup:main"
-
-[tool.setuptools]
-py-modules = ["apt_gcode_startup", "jezici", "parseline", "output"]
