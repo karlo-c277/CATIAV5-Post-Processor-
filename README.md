@@ -25,7 +25,7 @@ I only have access to CATIAV5 from 2013? I think, and that only in school.
 I also have acces to WinNC Sinumerik the newer looking one, but I just made it so it switches to ISO 6983 mode
 
 # Development plan
-v0.9 CYCLE/ commands full support
+v0.9 CYCLE/ commands full support  
 v1.0 Helix tool path support
 v1.+ G-code output in ISO 6983, WinNC Sinumerik, WinNC Fanuc
 v2.0 SolidWorks APT code support 
