@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "apt-gcode"
-version = "0.9.1"
+version = "0.8.1"
 
 [tool.hatch.build.targets.wheel]
 bypassed-compatibility-check = true
