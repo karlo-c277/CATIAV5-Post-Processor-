@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <title>apt-gcodev0.8-html</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>APT-Gcode-v0.8</h1>
+        <div class="form-group">
+            <label for="costumFilename">Enter file name:</label>
+            <input type="file" id="costumFilename" placeholder="beans.aptsource">
+        </div>
+        <div class="form-group2">
+            <label for="demoSelect">Or select a demo file:</label>
+            <select id="demoSelect">
+                <option value="">-- Choose Demo --</option>
+                <option value="DEMO1.txt">DEMO1</option>
+                <option value="DEMO2.txt">DEMO2</option>
+                <option value="DEMO3.txt">DEMO3</option>
+                <option value="DEMO4.txt">DEMO4</option>
+                <option value="DEMO5.txt">DEMO5</option>
+                <option value="DEMO6.txt">DEMO6</option>
+                <option value="DEMO7.txt">DEM07</option>
+            </select>
+        </div>
+        <button onclick="sendToPython()">APT-Gcode translate</button>
+        <div class="inputSettings">
+            <label for="inputSettings">Choose settings for input file</label>
+            <select name="Language" id="language">
+                <option value="">-- Choose Language --</option>
+                <option value="HR">CRO/Hrvatski</option>
+                <option value="EN">ENG/English</option>
+            </select>
+
+            <select name="APT code type" id="apt-code-version">
+                <option value="">-- Choose APT code type --</option>
+                <option value="catiav5_1.0">CATIAV5 APT1.0</option>
+            </select>
+
+            <select name="Output" id="preset">
+                <option value="">-- Select preset output file --</option>
+                <option value="costum">Costum</option>
+                <option value="WinNC Sinumerik">WinNC Sinumerik</option>
+            </select>
+
+        </div>
+        <div id="costumOptions" class="hidden-panel" style="display: none">
+            <h4>Costum settings</h4>
+            <div class="costumSettings">
+                <label>Costum settings</label>
+                <input type="text" id="command-to-iso" placeholder="Enter G-code command to switch to ISO6983 mode">
+            </div>
+        </div>
+        <button onclick="sendToPython()">APT-Gcode translate</button>
+        <div class="terminal-container">
+            <h3>Output:</h3>
+            <pre id="terminalOutput">-no output select a file and translate it to generate output</pre>
+
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
