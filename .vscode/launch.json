@@ -3,6 +3,7 @@
     "configurations": [
         
         
+        
         {
             "name": "Parser",
             "type": "debugpy",
@@ -10,5 +11,15 @@
             "program": "${workspaceFolder}/apt_gcode_startup.py",
             "console": "integratedTerminal"
         }
-    ]
+    ],
+
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 3000,
+    "liveServer.settings.root": "/",
+    "liveServer.settings.mountCleanUrl": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.tabSize": 4,
+    "editor.wordWrap": "on",
+    "explorer.compactFolders": false
+
 }

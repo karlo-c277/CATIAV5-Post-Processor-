@@ -1,5 +1,4 @@
->CLI version will be defined as followed: v1.2 where the 1. stands for Post processor version, 2 for patch number  
->Web version will be defined as followed: v1.2.3.4 where the 1. stands for web software version, 2. stands for web patch number, 3. Post processor version, 4 post processor patch number  
+>Web versions will be defined as followed: v1.2.3.4 where the 1. stands for web software version, 2. stands for web patch number, 3. Post processor version, 4 post processor patch number  
 
 # APT-Gcode
 This is an open source post processor for ATP files outputed by CAM programs  

@@ -16,10 +16,6 @@ def normalize_input_path(path):
         path += ".txt"
     return path
 
-
-def parse_yes_no(value):
-    return str(value).strip().upper() in ("DA", "YES", "1")
-
 class Tee:
     def __init__(self, *files):
         self.files = files
