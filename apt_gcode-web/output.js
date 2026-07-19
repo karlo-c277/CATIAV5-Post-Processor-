@@ -1,4 +1,5 @@
-import { generateHeader } from "./settings";
+console.log("output")
+import { generateHeader } from "./settings.js";
 
 let output = [];
 export function clearOutput(){
@@ -18,14 +19,11 @@ export function buildOutput(settings){
     if (settings.output.isoCommand && settings.output.isoCommand.trim() !==""){
         finalOutput.push(settings.output.isoCommand);
     }
-    if (finalOutput.lengt > 0){
+    if (finalOutput.lenght > 0){
         finalOutput.push("");
     }
     finalOutput.push(...output);
     return finalOutput.join("\n");
-}
-function generateHeader(settings){
-    return settings.output.header.replace("{filename}",settings.output.filename);
 }
 export function downloadOutput(text,settings){
     const blob = new Blob([text],{
@@ -33,10 +31,10 @@ export function downloadOutput(text,settings){
         "text/plain;charset=" + settings.output.encoding
     });
     const link = document.createElement("a");
-    link.herf=URL.createObjectURL(blob);
+    link.href=URL.createObjectURL(blob);
     link.download =
-        settings.output.flename + settings.output.extension;
+        settings.output.filename + settings.output.extension;
     link.click();
-    URL.revokeObjectURL(link.herf);
+    URL.revokeObjectURL(link.href);
 }
-
+console.log("output end")

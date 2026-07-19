@@ -1,3 +1,4 @@
+console.log("settings");
 export function generateHeader(settings){
     return settings.output.header.replace("{filename}", settings.output.filename);
 }
@@ -25,3 +26,6 @@ export function getSettings(){
     }
     return settings;
 }
+export function validateSettings(){}
+
+console.log("settings end")

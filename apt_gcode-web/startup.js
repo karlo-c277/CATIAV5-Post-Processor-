@@ -1,6 +1,9 @@
+console.log("startup")
 import {getSettings, validateSettings} from "./settings.js";
-import {MyParseline} from "./parseline.js";
-import {clearOutput, buildOutput, dowloadOutput} from "./output.js";
+console.log("1");
+//import {MyParseline} from "./parseline.js";
+console.log("2");
+import {clearOutput, buildOutput, downloadOutput} from "./output.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const button = document.getElementById("translateButton");
@@ -39,8 +42,8 @@ async function loadAPT(settings) {
     }
     if (settings.demo) {
         const response = await fetch("demo/"+settings.demo);
-        if (!response.ok)
-            throw new Error("Demo file not found.");
+        if (!response.ok) {
+            throw new Error("Demo file not found.");}
         return await response.text();
         const buffer = await response.arrayBuffer();
         const decoder = new TextDecoder(settings.inputEncoding);
@@ -65,6 +68,6 @@ function splitAPT(text) {
     }
     return commands;
 }
-
+console.log("startup end")
 {}
 []

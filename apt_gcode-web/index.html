@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>apt-gcodev0.8-html</title>
-    <link rel="stylesheet" href="style.css">
+    <!--<link rel="stylesheet" href="style.css">-->
 </head>
 <body>
     <div class="container">
@@ -57,7 +57,7 @@
                 <label>Costum settings</label>
                 <input type="text" id="command-to-iso" placeholder="Enter G-code command to switch to ISO6983 mode">
                 <label>Header - some programs check for specific frazes in the header name</label>
-                <input type="text" id="output_header" placeholder="%$.K_Baked__Beans.MPF_.$%">
+                <input type="text" id="output_header" placeholder="%Baked_Beans.MPF%">
             </div>
         </div>
         <div id="costumOutput" class="hiddenPanel" style="display: none">
@@ -92,5 +92,6 @@
         </div>
         <div id="errorBox"></div>
     </div>
-    <script type="module" src="script.js"></script>
+    <script type="module" src="java_index.js"></script>
+    <script type="module" src="startup.js"></script>
 </body>
