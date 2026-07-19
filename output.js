@@ -40,7 +40,3 @@ export function downloadOutput(text,settings){
     URL.revokeObjectURL(link.herf);
 }
 
-{}
-[]
-||
-\n
