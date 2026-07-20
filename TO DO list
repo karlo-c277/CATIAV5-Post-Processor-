@@ -7,7 +7,9 @@ There are some .txt files those are for testing your code.
 
 
 
+
 Define what does cutter/ with a lot of elements mean, for each element and implement that
+upgrade logic on rapid, in g code it stays in rapid in  catia apt it turns off after one command
 Resolve the CYCLE/ output for CATIAV5 -NOTE!!! use g291 to get into iso standard for canned cycles like g80 g81 g83 etc. 
 Start making new parseline for other g code standards and apt file outputs -as you wish
 Check what encryption do different CNC_____ programs use and then make like profiles, user just selects wheter to prepare it for winnc siemens etc and the output file is automatically set with correc extension and encryption
