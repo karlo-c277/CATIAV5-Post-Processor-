@@ -89,6 +89,8 @@ export class MyParseline{
             let toler;
             let feed;
             let numf;
+            let dwell;
+            let revs;
 
         console.log(line);
         if (!line || !line.trim()) return;
@@ -566,7 +568,7 @@ export class MyParseline{
             }
         }
         else if (line.startsWith("DELAY")||line.startsWith("DWELL")){
-            dwell=line.split("/").trim();
+            dwell=line.split("/");
             if (line.includes("REV")){
                 revs=dwell.split(",").trim();
                 write("G4 R" + revs);
